@@ -1,0 +1,201 @@
+/* 1. Reset & Variabel */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary: #2ecc71;
+    --primary-dark: #27ae60;
+    --bg-light: #f0f4f8;
+    --white: #ffffff;
+    --text-dark: #2c3e50;
+    --text-muted: #7f8c8d;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* 2. Navigasi (Sama dengan Index agar Konsisten) */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a.active {
+    color: var(--primary);
+}
+
+/* 3. Container Katalog */
+.main-content {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.katalog-container {
+    background: var(--white);
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.katalog-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.katalog-header h1 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.katalog-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* 4. Search Box */
+.search-box {
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%237f8c8d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 20px;
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.1);
+}
+
+/* 5. Styling Tabel */
+.table-wrapper {
+    overflow-x: auto; /* Agar tabel bisa di-scroll di HP */
+    border-radius: 12px;
+    border: 1px solid #edf2f7;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background-color: #f8fafc;
+}
+
+th {
+    padding: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+    border-bottom: 2px solid #edf2f7;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.95rem;
+}
+
+/* Baris selang-seling */
+tbody tr:nth-child(even) {
+    background-color: #fcfdfd;
+}
+
+tbody tr:hover {
+    background-color: #f0fff4;
+}
+
+/* Tombol/Label Kalori */
+.cal-badge {
+    background: #e6fffa;
+    color: #2c7a7b;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* 6. Pesan Kosong */
+#noResult {
+    padding: 40px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.hidden {
+    display: none;
+}
+
+/* 7. Responsif Mobile */
+@media (max-width: 600px) {
+    .katalog-container {
+        padding: 20px;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    th, td {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+}

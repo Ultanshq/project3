@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Kalori Makanan - GiziKu</title>
+    <link rel="stylesheet" href="katalog.css">
+</head>
+<body>
+
+    <!-- Navigasi Utama -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../home/index.html" class="nav-logo">GiziKu</a>
+            <ul class="nav-menu">
+                <li><a href="../home/index.html">Kalkulator</a></li>
+                <li><a href="katalog.html" class="active">Katalog Makanan</a></li>
+                <li><a href="../diary/diary.html">Diary Makan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="main-content">
+        <section class="katalog-container">
+            <header class="katalog-header">
+                <h1>Daftar Kalori Makanan</h1>
+                <p>Cari informasi gizi makanan favoritmu di sini.</p>
+            </header>
+
+            <!-- Bar Pencarian -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari makanan... (misal: Nasi Goreng)" onkeyup="cariMakanan()">
+            </div>
+
+            <!-- Tabel Daftar Makanan -->
+            <div class="table-wrapper">
+                <table id="foodTable">
+                    <thead>
+                        <tr>
+                            <th>Nama Makanan</th>
+                            <th>Porsi</th>
+                            <th>Kalori (kkal)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="foodList">
+                        <!-- Data akan diisi secara otomatis oleh katalog.js -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pesan jika tidak ditemukan -->
+            <div id="noResult" class="hidden">
+                <p>Maaf, makanan tersebut belum tersedia di database kami.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="katalog.js"></script>
+</body>
+</html>

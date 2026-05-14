@@ -1,0 +1,217 @@
+/* 1. Reset Dasar & Variabel */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* Mencegah zoom otomatis di iPhone saat klik input */
+    font-size: 16px; 
+}
+
+:root {
+    --primary: #2ecc71;
+    --primary-dark: #27ae60;
+    --bg-light: #f8fafc;
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 2. Navigasi Responsif */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 0.8rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.2rem;
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a.active {
+    color: var(--primary);
+}
+
+/* 3. Konten Utama */
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px 40px 15px; /* Padding bawah lebih besar untuk scroll HP */
+}
+
+.calculator-card {
+    background: var(--white);
+    max-width: 480px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+h1 {
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* 4. Form Styling */
+.input-group {
+    margin-bottom: 18px;
+}
+
+/* Input Grid: Berdampingan di Desktop, Tumpuk di HP */
+.input-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.input-grid .input-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px; /* Lebih tebal agar mudah di-tap di HP */
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    background-color: #fcfcfc;
+    outline: none;
+    transition: all 0.2s ease;
+    appearance: none; /* Menghilangkan style default sistem */
+}
+
+input:focus, select:focus {
+    border-color: var(--primary);
+    background-color: var(--white);
+    box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.1);
+}
+
+/* 5. Tombol (Finger-Friendly) */
+.btn-hitung {
+    width: 100%;
+    background-color: var(--primary);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    /* Menghilangkan bayangan abu-abu di mobile */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-hitung:active {
+    transform: scale(0.98);
+    background-color: var(--primary-dark);
+}
+
+/* 6. Box Hasil */
+.result-box {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f0fff4;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #c6f6d5;
+}
+
+#calorie-number {
+    font-size: 3.5rem; /* Besar di mobile agar jelas */
+    font-weight: 800;
+    color: var(--primary);
+    display: block;
+    line-height: 1;
+}
+
+.unit {
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+/* 7. Media Queries Khusus HP */
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .input-grid {
+        flex-direction: column; /* Berat & Tinggi jadi tumpuk di HP */
+        gap: 0;
+    }
+
+    .calculator-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary Makan - GiziKu</title>
+    <link rel="stylesheet" href="diary.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../home/index.html" class="nav-logo">GiziKu</a>
+            <ul class="nav-menu">
+                <li><a href="../home/index.html">Kalkulator</a></li>
+                <li><a href="../katalog/katalog.html">Katalog Makanan</a></li>
+                <li><a href="diary.html" class="active">Diary Makan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="diary-container">
+            
+            <!-- Ringkasan Kalori Harian -->
+            <section class="summary-card">
+                <h2>Ringkasan Hari Ini</h2>
+                <div class="progress-container">
+                    <div class="progress-circle">
+                        <span id="remaining-calories">0</span>
+                        <small>Sisa Kkal</small>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="label">Target</span>
+                        <span id="target-val" class="value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Terpakai</span>
+                        <span id="consumed-val" class="value">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form Tambah Makan -->
+            <section class="add-food-card">
+                <h3>Tambah Makan</h3>
+                <div class="add-form">
+                    <input type="text" id="food-name" placeholder="Nama makanan (misal: Nasi Goreng)">
+                    <input type="number" id="food-cal" placeholder="Kalori (kkal)">
+                    <button onclick="tambahItem()">Tambah</button>
+                </div>
+                <p class="hint">Tips: Lihat angka kalori di halaman <a href="../katalog/katalog.html">Katalog</a></p>
+            </section>
+
+            <!-- Daftar Konsumsi -->
+            <section class="list-card">
+                <h3>Daftar Konsumsi</h3>
+                <ul id="diary-list">
+                    <!-- Item akan muncul di sini via diary.js -->
+                </ul>
+                <button class="btn-reset" onclick="resetDiary()">Hapus Semua Data Hari Ini</button>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="diary.js"></script>
+</body>
+</html>

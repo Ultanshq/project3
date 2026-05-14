@@ -1,0 +1,206 @@
+/* 1. Reset & Root */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+:root {
+    --primary: #2ecc71;
+    --danger: #e74c3c;
+    --dark: #2c3e50;
+    --gray: #95a5a6;
+    --light: #f8f9fa;
+    --white: #ffffff;
+}
+
+body {
+    background-color: #f1f3f5;
+    color: var(--dark);
+}
+
+/* 2. Navigasi */
+.navbar {
+    background: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--gray);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.nav-menu a.active {
+    color: var(--primary);
+}
+
+/* 3. Layout Utama */
+.main-content {
+    padding: 20px 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.diary-container {
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 4. Ringkasan Kalori (Summary Card) */
+.summary-card {
+    background: linear-gradient(135deg, var(--primary), #27ae60);
+    color: white;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(46, 204, 113, 0.2);
+}
+
+.progress-circle {
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+    border: 8px solid rgba(255,255,255,0.2);
+    border-top: 8px solid white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#remaining-calories {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 15px;
+}
+
+.stat-item .label { font-size: 0.8rem; opacity: 0.8; display: block; }
+.stat-item .value { font-size: 1.1rem; font-weight: bold; }
+
+/* 5. Form Tambah Makan */
+.add-food-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+}
+
+.add-form button {
+    background: var(--dark);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hint { font-size: 0.75rem; color: var(--gray); margin-top: 10px; text-align: center; }
+.hint a { color: var(--primary); text-decoration: none; }
+
+/* 6. Daftar Konsumsi */
+.list-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#diary-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.diary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.diary-item .info b { display: block; font-size: 1rem; }
+.diary-item .info span { font-size: 0.85rem; color: var(--gray); }
+
+.btn-del {
+    background: #fff0f0;
+    color: var(--danger);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.btn-reset {
+    width: 100%;
+    background: none;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+/* 7. Responsif */
+@media (max-width: 480px) {
+    .nav-container { flex-direction: column; gap: 10px; }
+    .summary-card { padding: 20px; }
+    .progress-circle { width: 120px; height: 120px; }
+    #remaining-calories { font-size: 2rem; }
+}
